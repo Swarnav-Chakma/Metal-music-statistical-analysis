@@ -11,6 +11,10 @@ def main():
     s=json.loads((A/'04_summary.json').read_text());q=json.loads((A/'03_quality_checks.json').read_text())
     src=(ROOT/'CSE558_Midterm_Report.tex').read_text();readme=(ROOT/'README.md').read_text()
     assert src==(ROOT/'report.tex').read_text()
+    assert 'Group name & 4' in src
+    assert 'https://github.com/Swarnav-Chakma/Metal-music-statistical-analysis' in src
+    for stale in ['No public repository exists yet', 'There is no public GitHub repository yet', 'link will be added before submission']:
+        assert stale not in src+readme
     assert sha(ROOT/'CSE558_Midterm_Report.pdf')==sha(ROOT/'report.pdf')
     reader=PdfReader(ROOT/'CSE558_Midterm_Report.pdf');assert 1<=len(reader.pages)<=8
     text='\n'.join(p.extract_text() for p in reader.pages)
@@ -45,9 +49,9 @@ def main():
     artifacts=[ROOT/'CSE558_Midterm_Report.pdf',ROOT/'report.pdf',ROOT/'CSE558_Midterm_Report.tex',ROOT/'report.tex',ROOT/'README.md']+figures+list(A.glob('04_*results*'))+[A/'04_summary.json',A/'04_inference_arrays.npz']
     result={'status':'passed','pdf_pages':len(reader.pages),'embedded_figure_forms':forms,'pdf_copies_identical':True,'source_copies_identical':True,
        'no_overfull_boxes':True,'targeted_tests':9,'raw_data_hashes_unchanged':True,'labels_match_local_zenodo_manifest':labels,
-       'all_result_tables_match_current_summary':True,'rendered_pages':'/private/tmp/metal_report_render_final/page-1.png through page-6.png',
-       'visual_review':'All six pages inspected at 144 dpi; fixed table widths, before/after titles, plot legends; final pages 1/3/4/6 pixel-identical to already inspected renders.',
-       'pending':'Public repository publishing and link addition before classroom submission.',
+       'all_result_tables_match_current_summary':True,'rendered_pages':'/private/tmp/metal_report_editorial_render/page-1.png through page-6.png',
+       'visual_review':'All six pages inspected at 144 dpi after editorial cleanup; group 4, public code link and unchanged team details verified.',
+       'pending':'Commit and push the local editorial updates to the existing public repository.',
        'limitations':'Asymptotic Wald/CR1 calibration, minimum 25 clusters per subgenre, cross-split artist overlap, uncertain mode estimates; H3 exploratory.',
        'sha256':{str(p.relative_to(ROOT)):sha(p) for p in artifacts}}
     (A/'06_delivery_checks.json').write_text(json.dumps(result,indent=2))

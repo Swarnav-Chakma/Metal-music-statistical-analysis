@@ -1,14 +1,17 @@
 # CSE558 Data Science Midterm — Acoustic Dispersion in Metal Subgenres
 
-The authoritative report is **CSE558_Midterm_Report.pdf**, built from **CSE558_Midterm_Report.tex**. `report.pdf` and `report.tex` are synchronized copies. The final compiled report has **six pages**, uses the supplied course LaTeX template, and is within the eight-page limit.
+This CSE558 Data Science midterm project examines acoustic dispersion, tempo–brightness relationships, and estimated musical mode across 17 metal subgenres.
 
-Code, data-processing instructions and results are supplied locally. **There is no public GitHub repository yet. The public code/README link must be added before classroom submission.** The deadline is 27 October 2026, 11:59 pm.
+- **Group:** 4
+- **Report:** [CSE558_Midterm_Report.pdf](CSE558_Midterm_Report.pdf)
+- **LaTeX source:** [CSE558_Midterm_Report.tex](CSE558_Midterm_Report.tex)
+- **Code:** [Swarnav-Chakma/Metal-music-statistical-analysis](https://github.com/Swarnav-Chakma/Metal-music-statistical-analysis)
 
 ## Data and scope
 
 Inputs are in `~/metal_data/features/`: `X.npy`, `metadata.csv`, `feature_names.csv`, `feature_schema.json`, `extraction_report.json`, and `exclusions.csv`. No raw files or original split assignments are modified.
 
-The local `~/metal_data/zenodo_manifest.json` identifies **Zenodo record 2553414**. Shard metadata identifies `acousticbrainz-mediaeval-features-train-89.tar.bz2` and `acousticbrainz-mediaeval-features-validation-01234567.tar.bz2`. This project uses their extracted subset, not the entire benchmark or all 30,388 candidate cohort records. No external source verification was used during final corrections.
+The local `~/metal_data/zenodo_manifest.json` identifies **Zenodo record 2553414**. Shard metadata identifies `acousticbrainz-mediaeval-features-train-89.tar.bz2` and `acousticbrainz-mediaeval-features-validation-01234567.tar.bz2`. This project uses their extracted subset, not the entire benchmark or all 30,388 candidate cohort records.
 
 | Population | Rows | Features | Instance–attributes |
 |---|---:|---:|---:|
@@ -18,7 +21,7 @@ The local `~/metal_data/zenodo_manifest.json` identifies **Zenodo record 2553414
 
 Exclude 14 development-build recordings (3 train / 11 validation) and two duplicate-audio recordings (1 / 1). Final split: **3,104 train / 2,754 validation**. The extraction-stage exclusion CSV is empty. There are no nonfinite raw feature values. The H1 features are acoustic descriptors, not columns created by one-hot encoding; 28 key/mode one-hots are excluded from H1 only.
 
-## Final methods
+## Methods
 
 All parameters and column-selection rules are fitted on retained training rows. Average-rank Blom normal scores handle ties; validation uses frozen unique training knots, interpolation and boundary clipping. R1 uses version correction, standardization and 69-family balancing. R2 and R4 matrices are retained but no sensitivity inference is claimed.
 
@@ -26,13 +29,13 @@ Dependence clusters are connected components linked by any valid credited artist
 
 Each recording has weight `1/(n_cg*m_g)`: equal component weight within subgenre. H1 resamples complete validation components, carrying every represented subgenre along; repeated selections are separate occurrences. Bootstrap multiplicity calculations are tested against literal expanded resamples.
 
-- **H1 primary:** weighted mean distance to each subgenre's own centroid in R1. Covariance of log dispersions from 1,999 whole-component bootstrap samples, seed 20261027; 16-contrast Wald test against approximate chi-square(16). No arbitrary ridge or old bias multiplier. Pointwise percentile CIs.
+- **H1 primary:** weighted mean distance to each subgenre's own centroid in R1. Covariance of log dispersions from 1,999 whole-component bootstrap samples, seed 20261027; 16-contrast Wald test against approximate chi-square(16). Pointwise percentile CIs.
 - **H2:** weighted group-specific intercept/slope regression of log spectral centroid on centered log2 tempo plus extractor-version indicator. Whole-component CR1 covariance, correction `M/(M-1)*(N-1)/(N-K)`, 16-contrast chi-square Wald. The pooled summary is the equal-subgenre average slope, with a normal 95% CI from the full covariance. It is not an imposed common slope.
-- **H3 exploratory:** saturated weighted linear probability model for estimated minor mode; whole-component CR1 covariance and 16-contrast chi-square Wald. Marginal, not version-adjusted. Pointwise normal CIs are not clipped. No cluster-label permutation or Cramer's V bootstrap CI remains.
+- **H3 exploratory:** saturated weighted linear probability model for estimated minor mode; whole-component CR1 covariance and 16-contrast chi-square Wald. Marginal, not version-adjusted. Pointwise normal CIs are not clipped.
 
 H1 alpha=.05. Holm applies to H2 and exploratory H3, using the sorted cumulative maximum. Statistical calibration is asymptotic; numerical checks are not proof of validity. The 10% dispersion, .05 slope and 10-percentage-point mode thresholds are project-defined practical benchmarks, not established psychoacoustic boundaries. Omnibus alternatives are non-directional, despite upper-tail test statistics.
 
-## Regenerated results
+## Results
 
 | Test | Wald W (df=16) | Raw p | Holm p | Effect / interval |
 |---|---:|---:|---:|---|
@@ -44,7 +47,7 @@ H1 and exploratory H3 reject their equality nulls under the selected approximati
 
 ## Reproduce locally
 
-The verified existing interpreter is `/opt/anaconda3/bin/python` (Python 3.13; NumPy 2.1.3, pandas 2.2.3, SciPy 1.15.3). Matplotlib creates figures; statsmodels independently validates CR1 estimates in the tests; pypdf validates PDF contents. The shell's plain `python3` points to a different environment lacking SciPy: do not use it for this pipeline. No installation is required in this environment.
+The verified existing interpreter is `/opt/anaconda3/bin/python` (Python 3.13; NumPy 2.1.3, pandas 2.2.3, SciPy 1.15.3). Matplotlib creates figures; statsmodels independently validates CR1 estimates in the tests; pypdf validates PDF contents. The commands below use the interpreter from the original analysis environment. On another machine, use a Python environment with these dependencies available.
 
 Run from the project root:
 
@@ -64,7 +67,7 @@ cp CSE558_Midterm_Report.pdf report.pdf
 /opt/anaconda3/bin/python analysis/06_verify_delivery.py
 ```
 
-Do not rerun raw extraction or the initial audit. Report prose contains rounded final values; if methods or data change, reconcile it with newly generated CSV/JSON results before compiling. No script automatically invents report conclusions. For an output-only refresh with unchanged numerical inputs, `04_hypothesis_tests.py --reuse-bootstrap` verifies input/core hashes and reuses the saved 1,999 H1 draws; it recomputes regression estimates and output summaries. Changed numerical inputs require the normal full run.
+These commands assume that the extracted inputs are already present in `~/metal_data/features/`. The repository contains scripts, report sources, PDFs, figures, metadata and numerical summaries; raw data, generated `.npy`/`.npz` arrays and local run logs are not included. A fresh clone alone is therefore insufficient to rerun the analysis: the extracted inputs must first be supplied. The pipeline regenerates the analysis arrays and bootstrap draws needed by the tests. Report values are rounded from the saved results. For an output-only refresh with unchanged numerical inputs, `04_hypothesis_tests.py --reuse-bootstrap` verifies input/core hashes and reuses the saved 1,999 H1 draws; it recomputes regression estimates and output summaries. Changed numerical inputs require the normal full run.
 
 ## Files and verification
 
@@ -75,12 +78,11 @@ Do not rerun raw extraction or the initial audit. Report prose contains rounded 
 - `analysis/02_design_summaries.py`: separates raw, retained, training and validation populations; saves component identifier evidence.
 - `analysis/05_eda_plots.py`: seven `fig_*.pdf` files. The minor-share reference is the same equal-subgenre weighted mean used in H3. Plot titles contain no conflicting figure numbers.
 - `analysis/test_final_pipeline.py`: tests ties/frozen maps, transitive clusters, row alignment, all six matrices, literal bootstrap equivalence, contrast covariance, independent statsmodels CR1 estimates, pooled CI, H3 shares, Holm, provenance and saved numerical results.
-- `analysis/06_test_results.log` and `analysis/06_delivery_checks.json`: final verification evidence.
+- `analysis/06_delivery_checks.json`: recorded delivery checks. Running the tests generates the local `analysis/06_test_results.log`.
 - `analysis/02_analysis_plan.md`: original plan preserved, with a dated final-validation amendment.
-- `analysis/report_draft.tex`: historical draft, not a submission source.
 
-## Limitations and history
+## Limitations
 
 This is an observational extracted subset with uncertain crowd tags and mode estimates (mode estimators agree on about 60.8%). Components approximate dependence from available IDs; missing links can leave residual dependence. There are artists/components in both splits. Inference conditions on training transformations and uses large-cluster approximations, with some subgenres having only 25 clusters. Bootstrap Monte Carlo error is finite; very small Wald tail probabilities should not be read as exact probabilities. No unused sensitivity analyses are claimed.
 
-Earlier results had been viewed before these implementation corrections; the amendment does not pretend to restore untouched preregistration. H3 remains exploratory. The original Gemini-stage scripts, results, README and reports were preserved before editing in `/private/tmp/metal_final_backup_20261027_052225/project.tar.gz`, with SHA-256 manifest beside it. No raw dataset was copied into that backup.
+Implementation corrections were made after preliminary results had been inspected. The dated amendment in [analysis/02_analysis_plan.md](analysis/02_analysis_plan.md) records these changes. H3 remains exploratory because validation mode counts were inspected during the design stage.
