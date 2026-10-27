@@ -1,0 +1,457 @@
+{
+ "x_sha": "79a6605a488feee0167535d5a50a76231afa9f8066885e353a2b4ef667a673d8",
+ "integrity": {
+  "shape": [
+   5874,
+   2675
+  ],
+  "dtype": "float32",
+  "nonfinite": 0,
+  "meta_missing": {
+   "artist_mbids": 885,
+   "albumartist_mbids": 1021
+  },
+  "exclusions": 0,
+  "repeated_row_groups": 0,
+  "duplicate_columns": 362,
+  "release_groups": 3633,
+  "mapping_rows_checked": 5874
+ },
+ "features": {
+  "constant": 34,
+  "near_constant": 51,
+  "near_constant_names": [
+   "lowlevel.silence_rate_20dB.dmean",
+   "lowlevel.silence_rate_20dB.dmean2",
+   "lowlevel.silence_rate_20dB.dvar",
+   "lowlevel.silence_rate_20dB.dvar2",
+   "lowlevel.silence_rate_20dB.mean",
+   "lowlevel.silence_rate_20dB.median",
+   "lowlevel.silence_rate_20dB.min",
+   "lowlevel.silence_rate_20dB.var",
+   "lowlevel.silence_rate_30dB.median",
+   "lowlevel.silence_rate_60dB.max",
+   "lowlevel.silence_rate_60dB.median",
+   "lowlevel.spectral_complexity.min",
+   "tonal.chords_key=D#",
+   "tonal.chords_key=F#",
+   "tonal.hpcp.max[0]",
+   "tonal.hpcp.max[1]",
+   "tonal.hpcp.max[2]",
+   "tonal.hpcp.max[3]",
+   "tonal.hpcp.max[4]",
+   "tonal.hpcp.max[5]",
+   "tonal.hpcp.max[6]",
+   "tonal.hpcp.max[7]",
+   "tonal.hpcp.max[8]",
+   "tonal.hpcp.max[9]",
+   "tonal.hpcp.max[10]",
+   "tonal.hpcp.max[11]",
+   "tonal.hpcp.max[12]",
+   "tonal.hpcp.max[13]",
+   "tonal.hpcp.max[14]",
+   "tonal.hpcp.max[15]",
+   "tonal.hpcp.max[16]",
+   "tonal.hpcp.max[17]",
+   "tonal.hpcp.max[18]",
+   "tonal.hpcp.max[19]",
+   "tonal.hpcp.max[20]",
+   "tonal.hpcp.max[21]",
+   "tonal.hpcp.max[22]",
+   "tonal.hpcp.max[23]",
+   "tonal.hpcp.max[24]",
+   "tonal.hpcp.max[25]",
+   "tonal.hpcp.max[26]",
+   "tonal.hpcp.max[27]",
+   "tonal.hpcp.max[28]",
+   "tonal.hpcp.max[29]",
+   "tonal.hpcp.max[30]",
+   "tonal.hpcp.max[31]",
+   "tonal.hpcp.max[32]",
+   "tonal.hpcp.max[33]",
+   "tonal.hpcp.max[34]",
+   "tonal.hpcp.max[35]",
+   "tonal.key_key=F#"
+  ],
+  "duplicate_columns": 362,
+  "duplicate_columns_by_block": {
+   "MFCC/GFCC cov+icov matrices": 312,
+   "scalar descriptors": 49,
+   "vector descriptors (bands, coefficients, HPCP)": 1
+  },
+  "informative_unique_columns": 2311,
+  "proposed_drop_counts": {
+   "exact duplicate of an earlier column": 330,
+   "near-constant (>=95% one value)": 48,
+   "constant": 34,
+   "track-length proxy": 1
+  },
+  "proposed_remaining_columns": 2262,
+  "nonconstant_duplicate_groups": [
+   [
+    "rhythm.bpm_histogram_first_peak_spread.max",
+    "rhythm.bpm_histogram_first_peak_spread.mean",
+    "rhythm.bpm_histogram_first_peak_spread.median",
+    "rhythm.bpm_histogram_first_peak_spread.min"
+   ],
+   [
+    "rhythm.bpm_histogram_second_peak_spread.max",
+    "rhythm.bpm_histogram_second_peak_spread.mean",
+    "rhythm.bpm_histogram_second_peak_spread.median",
+    "rhythm.bpm_histogram_second_peak_spread.min"
+   ],
+   [
+    "rhythm.bpm_histogram_second_peak_weight.max",
+    "rhythm.bpm_histogram_second_peak_weight.mean",
+    "rhythm.bpm_histogram_second_peak_weight.median",
+    "rhythm.bpm_histogram_second_peak_weight.min"
+   ],
+   [
+    "rhythm.bpm_histogram_second_peak_bpm.max",
+    "rhythm.bpm_histogram_second_peak_bpm.mean",
+    "rhythm.bpm_histogram_second_peak_bpm.median",
+    "rhythm.bpm_histogram_second_peak_bpm.min"
+   ],
+   [
+    "rhythm.bpm_histogram_first_peak_weight.max",
+    "rhythm.bpm_histogram_first_peak_weight.mean",
+    "rhythm.bpm_histogram_first_peak_weight.median",
+    "rhythm.bpm_histogram_first_peak_weight.min"
+   ],
+   [
+    "rhythm.bpm_histogram_first_peak_bpm.max",
+    "rhythm.bpm_histogram_first_peak_bpm.mean",
+    "rhythm.bpm_histogram_first_peak_bpm.median",
+    "rhythm.bpm_histogram_first_peak_bpm.min"
+   ]
+  ],
+  "columns_by_block": {
+   "MFCC/GFCC cov+icov matrices": 676,
+   "one-hot (key/scale)": 28,
+   "scalar descriptors": 436,
+   "vector descriptors (bands, coefficients, HPCP)": 1535
+  },
+  "columns_by_section": {
+   "lowlevel": 2117,
+   "rhythm": 121,
+   "tonal": 437
+  },
+  "families": 75,
+  "abs_skew_gt_2": 1719,
+  "abs_skew_gt_10": 769,
+  "max_abs_gt_1e6": 31,
+  "log10_std_range": [
+   -15.85,
+   17.16
+  ],
+  "columns_with_gt1pct_extreme": 563,
+  "split_auc_max_dev": 0.0309,
+  "split_auc_cols_dev_gt_0.1": 0,
+  "rho_length_abs_gt_0.9": [
+   "rhythm.beats_count"
+  ],
+  "rho_length_abs_gt_0.5": 2,
+  "rho_recording_id_max": 0.0502,
+  "rho_release_group_id_max": 0.0532,
+  "rho_row_index_max": 0.0496,
+  "eta2_subgenre_max": 0.3999,
+  "eta2_subgenre_gt_0.3": 4,
+  "eta2_version_within_gt_0.05": 195,
+  "eta2_version_within_gt_0.10": 70,
+  "eta2_version_within_max": 0.2976
+ },
+ "redundancy": {
+  "columns_compared": 2310,
+  "constant_in_train_only": [
+   "lowlevel.silence_rate_20dB.median"
+  ],
+  "pairs_abs_r_gt_0.95": 5395,
+  "pairs_abs_r_gt_0.99": 3177,
+  "participation_ratio": 38.634908059851604,
+  "components_for_90pct_variance": 179
+ },
+ "confounders": {
+  "version_overall": {
+   "2.1-beta2": 4907,
+   "2.1-beta1": 953,
+   "2.1-dev": 14
+  },
+  "version_vs_split_cramers_v": 0.031696183221110175,
+  "version_vs_subgenre_cramers_v": {
+   "train": 0.16090285658898942,
+   "validation": 0.19774577703943422
+  },
+  "beta1_share_by_subgenre_range": [
+   0.05791505791505792,
+   0.34558823529411764
+  ],
+  "artist_coverage": {
+   "has_artist": {
+    "train": 0.8523,
+    "validation": 0.846
+   },
+   "has_any": {
+    "train": 0.8523,
+    "validation": 0.846
+   }
+  },
+  "artists_distinct": {
+   "train": 1251,
+   "validation": 858,
+   "shared": 360
+  },
+  "validation_recordings_with_artist_in_train": 1411,
+  "validation_recordings_with_artist_known": 2340,
+  "val_queries_with_same_artist_train_cand": 1411,
+  "val_queries_with_ge10_same_artist_same_subgenre": 248,
+  "same_artist_cands_mean": 2.7982646420824295,
+  "same_artist_cands_max": 33,
+  "p_same_subgenre_random_pair": 0.08481261707942836,
+  "p_same_subgenre_given_same_artist": 0.9484496124031008,
+  "within_split_same_artist_pairs": {
+   "train": [
+    5356,
+    495
+   ],
+   "validation": [
+    7391,
+    424
+   ]
+  },
+  "tag_recording_mbid": {
+   "match": 5641,
+   "differs": 233
+  },
+  "tag_mismatch_by_split": {
+   "validation": 141,
+   "train": 92
+  },
+  "tag_mismatch_pointing_to_matrix_recording": 0,
+  "tag_mismatch_pointing_to_cohort_recording": 0,
+  "duplicate_audio_groups": 2,
+  "duplicate_audio_cross_split_groups": 0,
+  "duplicate_audio_label_conflict_groups": 0,
+  "subset_vs_full_cohort_chisquare": {
+   "train": {
+    "chi2": 9.52,
+    "p": 0.8905335885946953
+   },
+   "validation": {
+    "chi2": 2.76,
+    "p": 0.99990323500113
+   }
+  },
+  "imbalance_ratio": {
+   "train": 6.7,
+   "validation": 8.41
+  },
+  "short_tracks_lt30s": 35,
+  "short_tracks_lt30s_by_subgenre": {
+   "metal---grindcore": 22,
+   "metal---heavymetal": 3,
+   "metal---blackmetal": 2,
+   "metal---thrashmetal": 2,
+   "metal---progressivemetal": 2,
+   "metal---gothicmetal": 1,
+   "rock---alternativemetal": 1,
+   "metal---powermetal": 1,
+   "metal---deathmetal": 1
+  },
+  "long_tracks_gt900s": 39
+ },
+ "duplicate_audio": [
+  {
+   "audio_md5": "8cdcfa2e8edf67e0680252e19ce4f97b",
+   "recordingmbid": "88836517-47fa-4e39-95f8-88a4fa4f0539",
+   "subgenre": "rock---hairmetal",
+   "split": "train",
+   "release_group": "530e8ee6-0842-3a03-99f3-1cbf439436dd",
+   "artist_mbids": "bd4e0318-8792-4301-b70b-23e9f8e7917f",
+   "length_seconds": 213.028564453,
+   "identical_feature_row": 0
+  },
+  {
+   "audio_md5": "8cdcfa2e8edf67e0680252e19ce4f97b",
+   "recordingmbid": "9b70f677-fc39-4084-bf07-190760b20739",
+   "subgenre": "rock---hairmetal",
+   "split": "train",
+   "release_group": "bd3ac3dd-1240-3147-bec6-e938b4b27a81",
+   "artist_mbids": "bd4e0318-8792-4301-b70b-23e9f8e7917f",
+   "length_seconds": 213.028564453,
+   "identical_feature_row": 0
+  },
+  {
+   "audio_md5": "f1879bc5970167510ffd53d1313c439e",
+   "recordingmbid": "3e07de0a-004a-4e28-959c-43cd293aae1b",
+   "subgenre": "metal---heavymetal",
+   "split": "validation",
+   "release_group": "5b8e9e04-e873-3246-924c-a9eb2bd1250a",
+   "artist_mbids": "171cbc8f-8ab3-4aec-9916-f0bdbe26bb79",
+   "length_seconds": 223.582046509,
+   "identical_feature_row": 0
+  },
+  {
+   "audio_md5": "f1879bc5970167510ffd53d1313c439e",
+   "recordingmbid": "7de7d7c2-772b-4e01-b949-2ec80fd17fe4",
+   "subgenre": "metal---heavymetal",
+   "split": "validation",
+   "release_group": "5dd26946-4f1c-3d07-ac92-b22fe417fd02",
+   "artist_mbids": "171cbc8f-8ab3-4aec-9916-f0bdbe26bb79",
+   "length_seconds": 223.582046509,
+   "identical_feature_row": 0
+  }
+ ],
+ "duration_by_subgenre": {
+  "electronic---industrialmetal": {
+   "min": 35.3,
+   "25%": 222.6,
+   "50%": 257.2,
+   "75%": 306.7,
+   "max": 1915.7
+  },
+  "metal---blackmetal": {
+   "min": 9.6,
+   "25%": 223.6,
+   "50%": 288.6,
+   "75%": 370.8,
+   "max": 1203.0
+  },
+  "metal---deathmetal": {
+   "min": 16.2,
+   "25%": 190.2,
+   "50%": 233.6,
+   "75%": 283.6,
+   "max": 1316.8
+  },
+  "metal---doommetal": {
+   "min": 49.9,
+   "25%": 254.6,
+   "50%": 357.1,
+   "75%": 505.3,
+   "max": 1640.3
+  },
+  "metal---folkmetal": {
+   "min": 88.0,
+   "25%": 205.4,
+   "50%": 246.0,
+   "75%": 302.8,
+   "max": 983.0
+  },
+  "metal---gothicmetal": {
+   "min": 17.0,
+   "25%": 230.2,
+   "50%": 264.0,
+   "75%": 310.8,
+   "max": 1447.0
+  },
+  "metal---grindcore": {
+   "min": 4.0,
+   "25%": 46.6,
+   "50%": 74.5,
+   "75%": 121.2,
+   "max": 525.5
+  },
+  "metal---heavymetal": {
+   "min": 16.7,
+   "25%": 225.6,
+   "50%": 269.1,
+   "75%": 318.4,
+   "max": 1106.2
+  },
+  "metal---melodicdeathmetal": {
+   "min": 52.8,
+   "25%": 217.1,
+   "50%": 253.0,
+   "75%": 303.1,
+   "max": 640.5
+  },
+  "metal---metalcore": {
+   "min": 40.3,
+   "25%": 188.5,
+   "50%": 223.6,
+   "75%": 254.9,
+   "max": 566.0
+  },
+  "metal---powermetal": {
+   "min": 15.4,
+   "25%": 234.4,
+   "50%": 283.4,
+   "75%": 343.1,
+   "max": 1751.1
+  },
+  "metal---progressivemetal": {
+   "min": 29.1,
+   "25%": 245.0,
+   "50%": 299.3,
+   "75%": 390.3,
+   "max": 1030.7
+  },
+  "metal---thrashmetal": {
+   "min": 10.3,
+   "25%": 187.8,
+   "50%": 236.5,
+   "75%": 294.8,
+   "max": 808.5
+  },
+  "postrock---postmetal": {
+   "min": 56.0,
+   "25%": 303.4,
+   "50%": 424.8,
+   "75%": 548.0,
+   "max": 1172.2
+  },
+  "rock---alternativemetal": {
+   "min": 8.3,
+   "25%": 200.3,
+   "50%": 226.6,
+   "75%": 260.8,
+   "max": 1051.1
+  },
+  "rock---hairmetal": {
+   "min": 80.1,
+   "25%": 215.7,
+   "50%": 248.1,
+   "75%": 288.5,
+   "max": 447.9
+  },
+  "rock---numetal": {
+   "min": 59.1,
+   "25%": 195.6,
+   "50%": 224.4,
+   "75%": 249.9,
+   "max": 832.9
+  }
+ },
+ "same_artist_query_stats": {
+  "same_artist_cands": {
+   "count": 2766.0,
+   "mean": 2.8,
+   "std": 5.08,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 1.0,
+   "75%": 3.0,
+   "max": 33.0
+  },
+  "same_artist_same_subgenre": {
+   "count": 2766.0,
+   "mean": 2.65,
+   "std": 4.92,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 3.0,
+   "max": 33.0
+  },
+  "relevant_cands": {
+   "count": 2766.0,
+   "mean": 263.6,
+   "std": 158.2,
+   "min": 76.0,
+   "25%": 126.0,
+   "50%": 199.0,
+   "75%": 449.0,
+   "max": 509.0
+  }
+ }
+}

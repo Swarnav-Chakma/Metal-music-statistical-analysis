@@ -1,0 +1,18 @@
+{
+  "raw_rows": 5874,
+  "raw_features": 2675,
+  "retained_rows": 5858,
+  "train_rows": 3104,
+  "validation_rows": 2754,
+  "base_features": 2262,
+  "H1_features": 2234,
+  "families": 69,
+  "training_selection_matches_original": true,
+  "raw_instance_attributes": 15712950,
+  "base_instance_attributes": 13250796,
+  "H1_instance_attributes": 13086772,
+  "raw_sha256": "79a6605a488feee0167535d5a50a76231afa9f8066885e353a2b4ef667a673d8",
+  "metadata_sha256": "39d9e03b3f967d0d782a778b5df119d4edb103da4338ca5359354d04dde0deb6",
+  "preprocess_sha256": "afc56da199067a9fcf5ee3b2ddec12b903923dcafc6c7ccdfccd74eeac4f4c3d",
+  "core_sha256": "195e964b3dc4703a3840497cccef64aa5d0c80dfe3f07fe6d3b031c112835f8e"
+}

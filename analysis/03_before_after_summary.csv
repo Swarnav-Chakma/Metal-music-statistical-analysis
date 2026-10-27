@@ -1,0 +1,13 @@
+Measure,Before,After
+Total recordings,5874,5858
+Training recordings,3108,3104
+Validation recordings,2766,2754
+Feature columns,2675,2234
+Constant columns dropped,--,34
+Duplicate cols dropped,--,330
+Near-constant cols dropped,--,48
+Key/scale one-hots excluded (H1),--,28
+track-length proxy dropped,--,1
+Families (H1),73,69
+Col std-dev range (log10) before scaling,-15.85 to +17.16,training SD=1 before family weights; R1 SD=1/sqrt(k_f)
+Extractor version offset cols adjusted,0,all 2234 (beta1 location shift)

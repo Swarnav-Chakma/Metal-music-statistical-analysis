@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "pdf_pages": 6,
+  "embedded_figure_forms": 7,
+  "pdf_copies_identical": true,
+  "source_copies_identical": true,
+  "no_overfull_boxes": true,
+  "targeted_tests": 9,
+  "raw_data_hashes_unchanged": true,
+  "labels_match_local_zenodo_manifest": {
+    "/Users/swarnavchakma/metal_data/ab_tsv/acousticbrainz-mediaeval-lastfm-validation.tsv.bz2": "md5:9fc1ced2b4317993ad91fd59e718f7ef",
+    "/Users/swarnavchakma/metal_data/ab_tsv/acousticbrainz-mediaeval-lastfm-train.tsv.bz2": "md5:797a4d6dfcdbe9c405f336225a97fd9e"
+  },
+  "all_result_tables_match_current_summary": true,
+  "rendered_pages": "/private/tmp/metal_report_render_final/page-1.png through page-6.png",
+  "visual_review": "All six pages inspected at 144 dpi; fixed table widths, before/after titles, plot legends; final pages 1/3/4/6 pixel-identical to already inspected renders.",
+  "pending": "Public repository publishing and link addition before classroom submission.",
+  "limitations": "Asymptotic Wald/CR1 calibration, minimum 25 clusters per subgenre, cross-split artist overlap, uncertain mode estimates; H3 exploratory.",
+  "sha256": {
+    "CSE558_Midterm_Report.pdf": "430bb69a5fc9c5aa0d058d3d6321e7c6330a2a7a7578da3ce9f45f3c747fa440",
+    "report.pdf": "430bb69a5fc9c5aa0d058d3d6321e7c6330a2a7a7578da3ce9f45f3c747fa440",
+    "CSE558_Midterm_Report.tex": "8d9d4f63d6d8154891c0ddad4228fc2fc28fa310395b55e57ffffdaf06ee5c1d",
+    "report.tex": "8d9d4f63d6d8154891c0ddad4228fc2fc28fa310395b55e57ffffdaf06ee5c1d",
+    "README.md": "5e1a6cfc012cd70ec86c8caf7787a653b86b97c1e9b4abefda62e73e09e72d97",
+    "analysis/fig_before_after_scale.pdf": "dc1f5dd4e587192bd3e7ecdfe041c80b09edf3ae0f5ddd8809e3cc924ac5ed9a",
+    "analysis/fig_bpm_sc_scatter.pdf": "7d6803509030ed056dd66f173f7a8063ddce29f21b11b6b7dbdf3930a6065b4d",
+    "analysis/fig_dispersion_by_subgenre.pdf": "3d48255a1defe54f2509f9cf29bbcf6a74360aeab8b463f9659fe198bcc600aa",
+    "analysis/fig_minor_share.pdf": "48e52f3c53ea8f633a914e86b01c95a592b25eb49de0b7253c8ce7e4ac876455",
+    "analysis/fig_slopes_by_subgenre.pdf": "525ddb11fe6022d9a1b44212fe95b558ecbab93c390fe5a4ba8ea4d91e088203",
+    "analysis/fig_subgenre_counts.pdf": "278939f92fb065d3c7ba14d23274a204d415c7ca84e9ef78208d3e4a6cb8b608",
+    "analysis/fig_tempo_by_subgenre.pdf": "f4b876c5005df700968b20cebfb76ee5415eb736a3cbe3a8ff8023099d7d7a3e",
+    "analysis/04_H2_results.csv": "b9cb465262193b7958971a88cec706fdaea09e55557be8392710dcdd39530d87",
+    "analysis/04_H1_results.csv": "54be2d667c2aada92f42e45f7ee44779bae8b9385c14896d3a41d4712e90f690",
+    "analysis/04_results.md": "e14220f01a1f3b4f5389ab163060e2787e00f3320d31e989f0d3e60ed6c1bfe8",
+    "analysis/04_H3_results.csv": "246872999bcb1b4105b4003103a3754cf1cf5db5eb12643d3790dceb00f47fe9",
+    "analysis/04_summary.json": "d6a7b5a07f7bafdc30cc7a516b2438345a0c0e4c5f921cb6e57dbc76228181fb",
+    "analysis/04_inference_arrays.npz": "cf4ac32d56413aabc47932e8560648c95f76bc890b917d25ee5acf3d0fbe3ffa"
+  }
+}
