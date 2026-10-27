@@ -83,6 +83,6 @@ These commands assume that the extracted inputs are already present in `~/metal_
 
 ## Limitations
 
-This is an observational extracted subset with uncertain crowd tags and mode estimates (mode estimators agree on about 60.8%). Components approximate dependence from available IDs; missing links can leave residual dependence. There are artists/components in both splits. Inference conditions on training transformations and uses large-cluster approximations, with some subgenres having only 25 clusters. Bootstrap Monte Carlo error is finite; very small Wald tail probabilities should not be read as exact probabilities. No unused sensitivity analyses are claimed.
+This is an observational extracted subset with uncertain crowd tags and mode estimates (mode estimators agree on about 60.8%). Components approximate dependence from available IDs; missing links can leave residual dependence. There are artists/components in both splits. Inference conditions on training transformations and uses approximations requiring sufficiently many independent clusters, with some subgenres having only 25 clusters. Bootstrap Monte Carlo error is finite; very small Wald tail probabilities should not be read as exact probabilities. No unused sensitivity analyses are claimed.
 
 Implementation corrections were made after preliminary results had been inspected. The dated amendment in [analysis/02_analysis_plan.md](analysis/02_analysis_plan.md) records these changes. H3 remains exploratory because validation mode counts were inspected during the design stage.
