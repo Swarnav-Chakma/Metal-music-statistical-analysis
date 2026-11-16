@@ -1,0 +1,5 @@
+audio_md5,recordingmbid,subgenre,split,release_group,artist_mbids,length_seconds,identical_feature_row
+8cdcfa2e8edf67e0680252e19ce4f97b,88836517-47fa-4e39-95f8-88a4fa4f0539,rock---hairmetal,train,530e8ee6-0842-3a03-99f3-1cbf439436dd,bd4e0318-8792-4301-b70b-23e9f8e7917f,213.028564453,0
+8cdcfa2e8edf67e0680252e19ce4f97b,9b70f677-fc39-4084-bf07-190760b20739,rock---hairmetal,train,bd3ac3dd-1240-3147-bec6-e938b4b27a81,bd4e0318-8792-4301-b70b-23e9f8e7917f,213.028564453,0
+f1879bc5970167510ffd53d1313c439e,3e07de0a-004a-4e28-959c-43cd293aae1b,metal---heavymetal,validation,5b8e9e04-e873-3246-924c-a9eb2bd1250a,171cbc8f-8ab3-4aec-9916-f0bdbe26bb79,223.582046509,0
+f1879bc5970167510ffd53d1313c439e,7de7d7c2-772b-4e01-b949-2ec80fd17fe4,metal---heavymetal,validation,5dd26946-4f1c-3d07-ac92-b22fe417fd02,171cbc8f-8ab3-4aec-9916-f0bdbe26bb79,223.582046509,0
